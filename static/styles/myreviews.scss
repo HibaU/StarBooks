@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+$color: #85c223;
+
+nav{
+    background: $color;
+    height:60px;
+    display:flex;
+    justify-content: space-evenly;
+
+    a{
+        font-family:'Roboto', sans-serif;
+        font-size:21px;
+        color:#112d32;
+        margin-top:10px;
+        height:40px;
+    }
+
+    a:hover{
+        text-decoration:none;
+        color:white;
+    }
+}
+
+#tab{
+    display:flex;
+    justify-content:center;
+}
+
+.table{
+    width:900px;
+    font-family:'Roboto', sans-serif;
+    font-size:20px;
+    margin-top:50px;
+
+    a{
+        color:black;
+        
+    }
+
+    a:hover{
+        text-decoration:none;
+        color: $color;
+    }
+}
+
+
+

@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+body {
+  background: #efe2ba;
+}
+
+#login {
+  background-color: #85c223;
+  width: 90px;
+  height: 40px;
+  border-radius: 25px;
+  margin-left: 800px;
+  text-align: center;
+  padding-top: 10px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#logo {
+  margin: -50px;
+}
+
+h2 {
+  font-family: 'Berkshire Swash', cursive;
+  text-align: center;
+  font-size: 60px;
+  margin-top: -60px;
+}
+
+div p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  line-height: 20px;
+}
+
+#quote {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 100px;
+  background: #85c223;
+}
+/*# sourceMappingURL=index.css.map */

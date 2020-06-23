@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles/dashboard.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <nav>
+        <a href="{{url_for('dashboard')}}">
+            <p class="btn btn-dark"> Dashboard</p>
+        </a>
+        <a href="{{url_for('myreviews')}}">
+            <p>My Reviews</p>
+        </a>
+        <a href="{{url_for('logout')}}">
+            <p>Logout</p>
+        </a>
+    </nav>
+    <br>
+    <h4>Welcome back {{username}}</h4>
+    <br>
+    <br>
+    <p> Search a book</p>
+    <div id="searchbar">
+        <form action="{{url_for('search')}}" method="POST">
+            <input id="search" type="text" name="search" placeholder="Enter ISBN/Title/Author">
+            <br>
+            <br>
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+    </div>
+    <br>
+    <div id="tab">
+    <table class="table">
+        <thead class="thead-dark">
+        {% if books|length>0 %}
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+        </tr>
+        {% endif %}
+    </thead>
+        {% for book in books %}
+        <tr>
+           <td><a href="{{url_for('books',title=book.title)}}"> {{book.title}} </a> </td> 
+           <td>{{book.author}}</td>
+           <td>{{book.isbn}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel=stylesheet href="../static/styles/myreviews.css">
+    <title>My Reviews</title>
+</head>
+
+<body>
+    <nav>
+        <a href="{{url_for('dashboard')}}"> Dashboard </a>
+        <a class="btn btn-dark" href="{{url_for('myreviews')}}"> My Reviews </a>
+        <a href="{{url_for('logout')}}">Logout</a>
+    </nav>
+    <br>
+    <div id="tab">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Book Title</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            {% for rev in myrev %}
+            <tr>
+                <td> <a href="{{url_for('books',title=rev.title)}}">{{rev.title}} </a> </td>
+                <td>{{rev.review}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+nav {
+  background: #85c223;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+nav a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+  color: #112d32;
+  margin-top: 10px;
+  height: 40px;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+#tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.table {
+  width: 900px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.table a {
+  color: black;
+}
+
+.table a:hover {
+  text-decoration: none;
+  color: #85c223;
+}
+/*# sourceMappingURL=myreviews.css.map */
