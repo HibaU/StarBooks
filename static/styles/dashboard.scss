@@ -81,3 +81,21 @@ p{
         font-size: 21px;
     }
 }
+
+@media(max-width:500px)
+{
+    #search{
+        width:260px;
+    }
+
+    button{
+        margin-left:90px;
+    }
+}
+
+@media(max-width:380px)
+{
+    .table{
+        text-align:center;
+    }
+}

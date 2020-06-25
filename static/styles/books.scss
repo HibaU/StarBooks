@@ -197,3 +197,11 @@ button{
   font-size:14px;
 
 }
+
+@media(max-width:1000px)
+{
+  #details{
+    margin-top:30px;
+    text-align:center;
+  }
+}

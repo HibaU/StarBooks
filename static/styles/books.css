@@ -239,4 +239,11 @@ button {
   text-align: center;
   font-size: 14px;
 }
+
+@media (max-width: 1000px) {
+  #details {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
 /*# sourceMappingURL=books.css.map */

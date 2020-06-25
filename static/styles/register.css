@@ -86,4 +86,10 @@ a:hover {
   top: 10px;
   left: 10px;
 }
+
+@media (max-width: 500px) {
+  #form {
+    width: 300px;
+  }
+}
 /*# sourceMappingURL=register.css.map */

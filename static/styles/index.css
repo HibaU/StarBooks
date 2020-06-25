@@ -51,4 +51,26 @@ div p {
   margin-top: 100px;
   background: #85c223;
 }
+
+@media (max-width: 1000px) {
+  #logo {
+    width: 150px;
+    height: 150px;
+    margin: -40px 0px 50px -30px;
+  }
+  #login {
+    margin: 4px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  #quote {
+    font-size: 30px;
+    margin-top: 70px;
+  }
+  div p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+  }
+}
 /*# sourceMappingURL=index.css.map */
