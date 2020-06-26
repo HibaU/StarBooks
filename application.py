@@ -163,7 +163,7 @@ def get_api(isbn):
 @app.route("/myreviews")
 def myreviews():
     if "username" in session:
-        myrev = db.execute("SELECT title,review FROM books JOIN reviews ON books.id=reviews.book_id JOIN users ON users.id=reviews.user_id WHERE username= username",{"username": session['username']}).fetchall()
+        myrev = db.execute("SELECT title,review FROM books JOIN reviews ON books.id=reviews.book_id JOIN users ON users.id=reviews.user_id WHERE username=:username",{"username": session['username']}).fetchall()
         return render_template('myreviews.html',myrev=myrev)
     else:
         return redirect(url_for('login'))    
