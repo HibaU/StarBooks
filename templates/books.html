@@ -45,32 +45,33 @@
     {% if reviewed!=True%}
     <h3 id="like">Would you like to review the book?</h3>
     <div id="out">
-            <form action="{{url_for('review',title=details.title)}}" method="POST">
-                
-                <div class="stars">
-                    <input class="star star-5" id="star-5" type="radio" value="5" name="star" />
-                    <label class="star star-5" for="star-5"></label>
-                    <input class="star star-4" id="star-4" type="radio" value="4" name="star" />
-                    <label class="star star-4" for="star-4"></label>
-                    <input class="star star-3" id="star-3" type="radio" value="3" name="star" />
-                    <label class="star star-3" for="star-3"></label>
-                    <input class="star star-2" id="star-2" type="radio" value="2" name="star" />
-                    <label class="star star-2" for="star-2"></label>
-                    <input class="star star-1" id="star-1" type="radio" value="1" name="star" checked />
-                    <label class="star star-1" for="star-1"></label>
-                </div>
-                <textarea name="review" placeholder="Enter text here" rows="7" required></textarea>
-                <br>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <form action="{{url_for('review',title=details.title)}}" method="POST">
+
+            <div class="stars">
+                <input class="star star-5" id="star-5" type="radio" value="5" name="star" />
+                <label class="star star-5" for="star-5"></label>
+                <input class="star star-4" id="star-4" type="radio" value="4" name="star" />
+                <label class="star star-4" for="star-4"></label>
+                <input class="star star-3" id="star-3" type="radio" value="3" name="star" />
+                <label class="star star-3" for="star-3"></label>
+                <input class="star star-2" id="star-2" type="radio" value="2" name="star" />
+                <label class="star star-2" for="star-2"></label>
+                <input class="star star-1" id="star-1" type="radio" value="1" name="star" checked />
+                <label class="star star-1" for="star-1"></label>
+            </div>
+            <textarea name="review" placeholder="Enter text here" rows="7" required></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
     {% endif %}
 
 
     <h4 id="heading"> What people are saying</h4>
     <div id="outerrev">
+
+        {% for review in allreviews %}
         <div id="revs">
-            {% for review in allreviews %}
             <div id="space">
                 <h5>{{review[1]}}</h5>
                 {% for i in range(0, review[2]) %}
@@ -87,12 +88,12 @@
                         d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
                 </svg>
                 {% endfor %}
-            
+
             </div>
             <p id="comment">{{review[0]}}</p>
-            {% endfor %}
-
         </div>
+        {% endfor %}
+
     </div>
 </body>
 
