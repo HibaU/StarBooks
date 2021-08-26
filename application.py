@@ -21,7 +21,7 @@ Session(app)
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
-apikey = os.getenv("API_KEY")
+# apikey = os.getenv("API_KEY")
 
 
 @app.route("/")
@@ -114,18 +114,23 @@ def books(title):
                 break
             reviewed=False
 
-        res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": apikey, "isbns":isbn}).json()    
-        avg_rating = res['books'][0]['average_rating']
-        rating_count = res['books'][0]['work_ratings_count']
-
-        res2 = requests.get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn).json()
+        # res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": apikey, "isbns":isbn}).json()
+        res = requests.get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn).json()    
         try:
-            cover = res2["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
+            avg_rating = res['items'][0]['volumeInfo']['averageRating']
+            rating_count = res['items'][0]['volumeInfo']['ratingsCount']
+        except:
+            avg_rating = None
+            rating_count = None
+
+        # res2 = requests.get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn).json()
+        try:
+            cover = res["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
         except:
             cover = None
 
         try:
-            description = res2['items'][0]['volumeInfo']['description']
+            description = res['items'][0]['volumeInfo']['description']
         except:
             description = None            
 
